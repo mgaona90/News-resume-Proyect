@@ -1,0 +1,181 @@
+
+Los gestores de bases de datos (RDBMS) son softwares que gesitonan bases de datos cuyo lenguajes de consulta es SQL. 
+Cambia un poco la sintaxis. Los más comunes:
+- MySQL (Oracle. usa limit 1 por ejemplo). es gratis
+- SQL Server (Microsoft. usa top 1 por ejemplo) --dbo es el default. Es paga. EL QUE TENEMOS EN AZURE!
+- SQLite (Oracle. uno más chico y flexible) es gratis
+- PostgreSQL es gratis
+- Oracle
+
+---------------------------- LO QUE USAMOS ACA ABAJO ES SQL SERVER
+
+
+CREATE TABLE [Dwh-BigData-Prod].SHEMA.TABLA1 (
+	customer_journey_id numeric,
+	customer_journey varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+)
+
+DROP table IF EXISTS Table1;
+create temporary table Table1 as/create volatile table Table1 , no log as/create multiset volatile table Table1 as
+(
+Select top 10
+);/with data primary index(pay_payment_id) on commit preserve rows;
+
+
+--funciones
+max(t1.col1)
+min(t1.col1)
+avg(t1.col1)
+100.00*col3/(col4)
+
+(CASE WHEN NUM_JUGADOR=(max(NUM_JUGADOR) over(PARTITION BY GRUPO_SEGMENTOS)) THEN NUM_JUGADOR ELSE 0 END) AS GANADOR_GRUPO
+(CASE WHEN (COMENTARIO='1') THEN pregunta_id END)
+case when condicion1 and/or/AND not condition2 then col3 else 0.0 end
+case when datediff(day, cus_sen.site_since, so.creation_date) < 7 then '<7'
+when datediff(day, cus_sen.site_since, so.creation_date) < 30 then '30-7'
+when datediff(day, cus_sen.site_since, so.creation_date) < 90 then '30-90'
+when datediff(day, cus_sen.site_since, so.creation_date) > 90 then '>90'
+else 'Others' end Age_User,
+
+
+SUBSTR(col1,posicion_inicial,qty_characters) --extrae parte de la variable
+
+--formatos
+CAST(col6 AS varchar(10))/CAST(fecha AS DATE) --convierte a varchar de 10
+CONVERT(int, col8)  --convierte a int
+to_char(so.creation_date,'yyyy-mm-dd')/TRUNC(ctx.sco_creation_date,'RM' )(FORMAT 'yyyy-mm-dd')
+
+--agregaciones
+sum(case when condicion1 and condition2 then col3 else 0.0 end)
+count(col3)
+count(distinct col3)
+COUNT(*) OVER (PARTITION BY column_1 order by column_2 limit 1) --Va a contar la cantidad de veces que aparece object_id de la fila, en el total de object_id
+COUNT(Col5) OVER(PARTITION BY Col6 ROWS BETWEEN 90 PRECEDING AND 1 PRECEDING) AS 'Col56'
+count ((ml.ip_state_code)) OVER( PARTITION BY so.sender_id,ml.ip_state_code ORDER BY  ml.ip_state_code,so.sender_id,fecha asc ROWS BETWEEN 4 PRECEDING AND 1 PRECEDING) qty_last_90_IP_STATE
+**cuenta la cantidad de ips por cada combinación de sender e ip. ordenado por ip,sender y fecha asc, los primeros 4 registros del sender+ip desde la ultima fecha
+ COUNT ( DISTINCT cust_code )
+COALESCE(NULL, NULL, NULL, 'W3Schools.com', NULL, 'Example.com') **function returns the first non-null value in a list.
+SUM(amount) OVER(PARTITION BY city) TotalOrderAmount,
+Avg(amount) OVER(PARTITION BY city) AvgOrderAmount,
+Min(amount) OVER(PARTITION BY city) MinOrderAmount,
+MAX(amount) OVER(PARTITION BY city) MaxOrderAmount
+max(resultado) OVER (PARTITION BY grupo,jugador order by grupo,jugador ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING )  #mira el valor máximo para cada grupo
+
+
+respuesta al problema aleman: **encontrar el jugador con mas partidos ganados para cada grupo
+
+
+FROM 
+left join/inner join/right join/outerjoin
+left join scoring.estimador_operativo lkp  on lkp.site=sor.site_id and lkp.vertical=sor.vertical and lkp.sco_date=EXTRACT(YEAR from sor.pay_created_dt) || '-' || CAST(EXTRACT(month from sor.pay_created_dt) as varchar(2)) and sor.vertical is not null
+left join WHOWNER.LK_CUS_CUSTOMERS_DATA rec on sor.cus_cust_id_sel=rec.cus_cust_id --ver como sería esto, si funca bien. joinear con misma tabla de 2 formas diferentes
+left join WHOWNER.LK_CUS_CUSTOMERS_DATA cus on sor.cus_cust_id_buy=cus.cus_cust_id
+
+WHERE
+and datediff(day, dev.creation_Date, so.creation_date) < 7
+ and sor.creation_date < cus_sen.cus_ru_since_dt + interval '7' day
+IN, NOT IN, NULL, NOT NULL, =,<>,<,>,LIKE'%%'
+WHERE MSFP_SURVEYID IN (
+SELECT DISTINCT ENCUESTA_FUENTE_ID FROM [Dwh-BigData-Prod].EFECTY_VOC.LK_PREGUNTA WHERE INDICADOR=2 AND FUENTE='CRM'
+)
+isnumeric(col1)=0/1
+
+GROUP BY	
+HAVING count(DISTINCT c.pregunta_id)>10
+order by newid()/RAND()/RANDOM() --Aleatoreo  col1 asc, col2 desc
+limit 10 /sample 10000/order by newid()/RAND()/RANDOM()
+);
+
+
+
+
+
+
+#CREAR SCHEMAS
+CREATE SHCEMA
+
+#CREAR TABLAS
+CREATE TABLE "EFECTY_VOC_MODEL_NLP_LANDING"."BT_COMENTARIOS" 
+   (	"ID" NUMERIC, 
+	"INTERACCION_ID" NUMERIC(38,0) ,  
+	"PREGUNTA_ID" NUMERIC(6,0), 
+	"TEMA_ID" NUMERIC(6,0), 
+	"COMENTARIO" VARCHAR(4000), 
+	"WRAPUPNOTE" VARCHAR(4000), 
+	"WRAPUP_ID" NUMERIC(6,0), 
+	"VALOR" NUMERIC(6,0), 
+	"SUBTIPO" NUMERIC(6,0), 
+	"SENTIMIENTO" NUMERIC, 
+	"FECHA_PROCESO" DATETIME, 
+	"CLASE_ID" NUMERIC(6,0), 
+	"INDICADOR_ID"  NUMERIC(6,0), 
+	"CAUSA_RAIZ_ID"  NUMERIC(6,0), 
+	"PALABRA" VARCHAR(4000), 
+    "PUNTO_INTER
+
+
+
+
+
+#DROPEAR TABLAS (Elimina tabla)
+drop table EFECTY_VOC_MODEL_NLP_LANDING.PRUEBA_MATI
+IF OBJECT_ID('tempdb..#EFECTYVOC_MODELO_NLP_LANDING_FULL_COMBINACIONES_MULTI_CONT_COL') IS NOT NULL
+BEGIN
+    DROP TABLE #EFECTYVOC_MODELO_NLP_LANDING_FULL_COMBINACIONES_MULTI_CONT_COL 
+END
+
+DELETE(limpia todo lo que hay)
+delete table  EFECTY_VOC_MODEL_NLP_LANDING.PRUEBA_MATI
+
+
+#CREA COLUMNAS
+ALTER TABLE [Dwh-BigData-Prod].EFECTY_VOC.BT_COMENTARIOS ADD INDICADOR_ID NUMERIC(6,0) NULL 
+ALTER TABLE [Dwh-BigData-Prod].EFECTY_VOC.BT_COMENTARIOS ADD CAUSA_RAIZ_ID NUMERIC(6,0) NULL 
+ALTER TABLE [Dwh-BigData-Prod].EFECTY_VOC.BT_COMENTARIOS ADD PALABRA varchar(4000) NULL 
+ALTER TABLE [Dwh-BigData-Prod].EFECTY_VOC.BT_COMENTARIOS ADD PUNTO_INTERACCION_ID NUMERIC(6,0) NULL 
+ALTER TABLE [Dwh-BigData-Prod].EFECTY_VOC.BT_COMENTARIOS ADD CUSTOMER_JOURNEY_ID NUMERIC(6,0) NULL 
+
+#UPDATE COLUMNAS
+UPDATE EFECTY_VOC.BT_COMENTARIOS 
+SET 
+CLASE_ID = CASE WHEN SENTIMIENTO = 0 	THEN 3
+				WHEN SENTIMIENTO = 0.5 	THEN 2
+				WHEN SENTIMIENTO = 1 	THEN 1
+				ELSE NULL 
+				END 
+WHERE 1=1 
+AND CLASE_ID IS NULL 
+AND SENTIMIENTO IS NOT NULL
+
+
+#Insert into (CREAR FILAS)
+
+
+#CREA TABLA TEMPORAL: 
+#TABLATEMPORAL1 (DURA X LA SESION)
+SELECT 
+FC.PREGUNTA_ID, 
+COUNT(DISTINCT FC.TEMA_ID) as CANT_TEMA_ID, 
+INTO #TABLATEMPORAL1
+FROM TABLA FC 
+WHERE 1=1
+AND CU.PREGUNTA_ID IS NULL 
+GROUP BY FC.PREGUNTA_ID;
+
+
+#CREA TABLA SUPERTEMPORAL (DURA SOLO EN LA CONSULTA)
+WITH TOPTEN AS (
+    SELECT top 10 *
+    FROM EFECTY_VOC_MODEL_NLP_LANDING.BT_COMENTARIOS_HISTORICO
+)
+SELECT * FROM TOPTEN 
+
+
+Duplicar la estructura! porque 1 no es igual a 2. si fuera igual, si la duplica
+select * into EFECTY_VOC_MODEL_NLP_LANDING.BT_COMENTARIOS_NUEVO FROM EFECTY_VOC_MODEL_NLP_LANDING.BT_COMENTARIOS where 1=2
+
+
+#Actualizar datos
+UPDATE agenda
+  SET telefono='662142223' , email='albesanch@mimail.com'
+  WHERE nombre='Alberto Sanchez'
