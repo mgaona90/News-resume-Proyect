@@ -1,0 +1,20 @@
+Pasos a seguir
+1- Abro una terminal en visual studio code con git bash. Me ubico donde voy a guardar los archivos de git con los comandos de "cd" y "ls". para salir de un directorio, este comando "cd .."
+2- Descargo el repositorio de github con: "git clone https://github.com/Biwares/repodataia.git". Esto me va a descargar de la main. tambien puedo hacer "git pull origin main" en el caso que ya tenga el repositorio y lo quiera actualizar. es lo mismo.
+3- Me fijo en que rama estoy con:  "git status". debería estar parado en la rama develop para hacer cualquier modificación/commit/add.
+4- Si la rama develop no esta creada, la creo con "git branch develop".
+5- Una vez creada, necesito moverme a esa rama con el comando: "git checkout -b develop".
+6- Trabajo sobre los archivos dentro del repositorio (vs studio o jupyter), hago los cambios sobre los archivos, los guardo y selecciono "git add .". Esto prepara los archivos para que esten listos a ser commiteados.  "git add carpeta2" para solo modificar lo que se modifico en esa carpeta.
+7- Para commitear: "git commit -m "agregue carpetas" ". Guarda los cambios localmente listos para un push, incluído un comentario.
+8- Pusheo SIEMPRE a develop con:  "git push --set-upstream origin develop". Esto está conectado a un ssh (hay un key para cada compu. es la key de un solo usuario githubc)
+    9- entro a github y hago un merge de develop a main del código. listorti 
+10- en github remoto eliminarla (cuando mergeas te da la opción)
+11- localmente, pasarse a main (git checkout -b main) y eliminar la develop (git checkout -b develop)
+
+Ramas:
+- Master/Main: en producción
+- Develop: se desarrolla la nueva versión
+- Feature: se desarrollan los códigos puntuales para develop
+- Release: la versión final de develop, lista para subir a producción
+- Hotfix: Cambios pequeños que se le hace a la Master
+
