@@ -1,0 +1,23 @@
+1 cluster (servidor o nodo master) cuenta con X nodos (workers). Cada nodo tiene un core(procesador) y una memoria RAM específica que se utilizan según necesidades optimizadamente. 
+Memoria de computadora, relacionado con datalake. Tener varios nodos permite trabajar en paralelo. Cada nodo se prende, según dicen, 
+de forma optimizada y usando lo minimo indispensable.
+
+
+PARA TENER ACCESO A REDES DE EMPRESAS (DONDE TIENEN CIERTOS PROGRAMAS, APLICACIONES Y DATOS), SE NECESITA contar con UN IP publica QUE ESTE DENTRO DEL RANGO DE LAS IPs DE LA RED. Varios caminos:
+
+VPN. que biwares tenga una VPN tal que cuando nos conectamos, la VPN transforma la IP publica nuestra, en una IP valida para esa red en u proceso de encriptado o enmascarado (hay varios softwares que permiten esto. entre los más usados, Forticlient o OpenVPN). Proxy hace algo parecido pero no a nivel SO como la VPN, sino a nivel aplicación y sin software.
+Tener acceso con credenciales a una maquina virtual (Virtual Box, VMware), la cual si tenga una IP dentro del rango aceptado por la red.
+Hacer una excepeción configurando el firewall, donde se solicita que las IPs nuestras, la de mi compu, tenga acceso a su red. (es lo más peliloso)
+
+Además de todo esto, hay algunas redes privadas que tienen otra capa de seguridad y necesitan un tunnel (SSH). kerberos tambien es algo de esto y los proxy.
+
+
+IP publica es la del modem a la que estoy conectado, y la que se actualiza cuando se resetea. IP privada es la que me diferencia de los demas diapositivos dentro de mi red (modem)
+
+
+Luego, si me quiero conectar a la base de datos, necesito un gestor de base de datos como dbeaver y saber:
+host:
+puerto:
+database: 
+usuario y contraseña (Las credenciales)
+tipo de base de datos: (si es mysql, azure, redshift,etc. cada uno de estos tiene diferentes drivers, que son quienes funcionan de interpretador, propios de cada tecnología)
