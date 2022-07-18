@@ -7,7 +7,7 @@ Cada nodo se prende, según dicen, de forma optimizada y usando lo minimo indis
 PARA TENER ACCESO A REDES DE EMPRESAS (DONDE TIENEN CIERTOS PROGRAMAS, APLICACIONES Y DATOS), SE NECESITA contar con UN IP publica QUE ESTE DENTRO DEL RANGO DE LAS IPs DE LA RED. Varios caminos:
 
 VPN. que biwares tenga una VPN tal que cuando nos conectamos, la VPN transforma la IP publica nuestra, en una IP valida para esa red en u proceso de encriptado o enmascarado (hay varios softwares que permiten esto. entre los más usados, Forticlient o OpenVPN). Proxy hace algo parecido pero no a nivel SO como la VPN, sino a nivel aplicación y sin software.
-Tener acceso con credenciales a una maquina virtual (Virtual Box, VMware), la cual si tenga una IP dentro del rango aceptado por la red.
+Tener acceso con credenciales a una maquina virtual/instancia (con las herramientas Virtual Box o VMware), la cual si tenga una IP dentro del rango aceptado por la red. Esto puede estar de forma local (ocupa 16gb por ejemplo) o en la nube, pudiendo estar siempre prendida.
 Hacer una excepeción configurando el firewall, donde se solicita que las IPs nuestras, la de mi compu, tenga acceso a su red. (es lo más peliloso)
 
 Además de todo esto, hay algunas redes privadas que tienen otra capa de seguridad y necesitan un tunnel (SSH). kerberos tambien es algo de esto y los proxy.
