@@ -1,6 +1,7 @@
-1 cluster (servidor o nodo master) cuenta con X nodos (workers). Cada nodo tiene un core(procesador) y una memoria RAM específica que se utilizan según necesidades optimizadamente. 
-Memoria de computadora, relacionado con datalake. Tener varios nodos permite trabajar en paralelo. Cada nodo se prende, según dicen, 
-de forma optimizada y usando lo minimo indispensable.
+ROM: 1 tera  (Memoria de computadora, relacionado con datalake.barato e infinito
+RAM: 8 a 32GB buena performance. memoria volatil de corto plazo para procesamiento
+PROCESADOR: CPU (trabaja más en seria) o GPU (trabaja más en paralelo) según arquitectura. Normalmente tienen 1 cluster/servidor/nodo master con otros nodos/nucleos/workers. Cada nodo tiene un core(procesador) que la suman hacen  y una memoria RAM específica que se utilizan según necesidades optimizadamente. 
+Cada nodo se prende, según dicen, de forma optimizada y usando lo minimo indispensable.
 
 
 PARA TENER ACCESO A REDES DE EMPRESAS (DONDE TIENEN CIERTOS PROGRAMAS, APLICACIONES Y DATOS), SE NECESITA contar con UN IP publica QUE ESTE DENTRO DEL RANGO DE LAS IPs DE LA RED. Varios caminos:
