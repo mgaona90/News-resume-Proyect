@@ -7,7 +7,7 @@ linux: source bin/activate
  windows: .\Scripts\activate estando dentro del entorno). El comando en windows para activar: Scripts\activate
  --ME VOY A DAR CUENTA SI APARECE EN EL COMANDO (p2) al inicio!!. 
 corro el script phyton: Directorio >python nombre_archivo.py
-con desactivate sale del entorno!
+con "desactivate" o "exit" sale del entorno!
 
 
 ROM: 1 tera  (Memoria de computadora, relacionado con datalake.barato e infinito
