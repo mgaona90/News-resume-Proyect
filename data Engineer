@@ -38,6 +38,7 @@ conda deactivate
 
  ipykernel permite usar el enviroment en jupyter: "pip install ipykernel"
  we can link a kernel to our virtual environment con este comando: python -m ipykernel install --user --name=tutorial
+ Cuando linkeas, despues no necesitas activar el ambiente!! simplemente usando el kernel, ya esta ok!!!
 -----
 ver los kernels instalados: jupyter kernelspec list
 Eliminar kernel "tutorial": jupyter kernelspec remove tutorial
