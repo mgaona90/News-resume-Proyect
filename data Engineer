@@ -1,3 +1,7 @@
+Lenguaje python, que gracias a Conda (gestor de paquetes y un sistema de gestión de entornos de código abierto) puede ser instalado y permite utilizar varias plataformas (visual studio code, jupyter, jupyterlab) para utilizarlo
+Las librerías se obtienen por conda o pip, que buscan en archivos jerarquicamente.
+
+
 CREAR ENTORNOS VIRTUALES 
 me posiciono en la carpeta donde quiero tener el entorno
 tengo que tener instalado virtualenv en python (una libreria. sino es "pip install virtualenv")
