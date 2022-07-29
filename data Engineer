@@ -1,4 +1,6 @@
-Lenguaje python, que gracias a Conda (gestor de paquetes y un sistema de gestión de entornos de código abierto) puede ser instalado y permite utilizar varias plataformas (visual studio code, jupyter, jupyterlab) para utilizarlo
+Lenguaje: python
+Conda: Gestor de paquetes y un sistema de gestión de entornos. CUenta con canales donde estan ubicadas las librerías/paquetes para su instalación.
+Anaconda: es conda pero suma cositas. Esta orientado a simplificar el despliegue y administración de los paquetes de software. Facilita el uso de varias plataformas por ejemplo como visual studio code, jupyter, jupyterlab
 Las librerías se obtienen por conda o pip, que buscan en archivos jerarquicamente.
 
 
