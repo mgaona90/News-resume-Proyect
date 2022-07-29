@@ -27,10 +27,27 @@ linux: source bin/activate
   Una vez dentro del ambiente, puedo ejecutar condas comandos desde el cmd, o ir a jupyterlab/jupyter o Visual studio, seleccionar el kernel creado y configurarlo a gusto.
   Para modificar el python, es desde los comandos. ejemplo:conda install python=3.6
   
-    con "desactivate" o "exit" sale del entorno!
+    con "deactivate" sale del entorno!
 
-  
+----  
+OTRA FORMA DE CREAR AMBIENTES
+"conda create -n tutorial python=3.7"
 
+conda activate tutorial
+conda deactivate
+
+ ipykernel permite usar el enviroment en jupyter: "pip install ipykernel"
+ we can link a kernel to our virtual environment con este comando: python -m ipykernel install --user --name=tutorial
+-----
+ver los kernels instalados: jupyter kernelspec list
+Eliminar kernel "tutorial": jupyter kernelspec remove tutorial
+ver ambientes instalados: conda env list
+Eliminar ambientes"tutorial": conda env remove -n tutorial
+
+
+
+
+COMPUTADORA
 ROM: 1 tera  (Memoria de computadora, relacionado con datalake.barato e infinito
 RAM: 8 a 32GB buena performance. memoria volatil de corto plazo para procesamiento
 PROCESADOR: CPU (trabaja más en seria) o GPU (trabaja más en paralelo) según arquitectura. Normalmente tienen 1 cluster/servidor/nodo master con otros nodos/nucleos/workers. Cada nodo tiene un core(procesador) que la suman hacen  y una memoria RAM específica que se utilizan según necesidades optimizadamente. 
