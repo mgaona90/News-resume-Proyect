@@ -1,10 +1,18 @@
+GRAL PYTHON
 Lenguaje: python
 Conda: Gestor de paquetes y un sistema de gestión de entornos. CUenta con canales donde estan ubicadas las librerías/paquetes para su instalación.
 Anaconda: es conda pero suma cositas. Esta orientado a simplificar el despliegue y administración de los paquetes de software. Facilita el uso de varias plataformas por ejemplo como visual studio code, jupyter, jupyterlab
 Las librerías se obtienen por conda o pip, que buscan en archivos jerarquicamente.
 
 
-CREAR ENTORNOS VIRTUALES 
+IPs
+Cada diapositivo tiene una IP privada dinamica asociada al router (dinamica porque cambia en cada nueva conexión. ej. cuando reinicias el router) y se la
+identifica dentro del bash con el comando ipconfig. es una ip que solo se puede acceder desde la red local.
+Yy despues esta la IP publica (tambien dinamica, cuando reinicias router cambia por ejemplo. o cada tanto cambia),
+que son los diapositivos que se pueden conectar a internet. Router es el clasico ejemplo. Esos si deberias poder encontrar mas datos porque son publicos. 
+En esta pag por ejemplo te dice tu ip publica, y cuando reinicias el router debería cambiar: https://www.cualesmiip.com/
+
+ENTORNOS VIRTUALES 
 me posiciono en la carpeta donde quiero tener el entorno
 tengo que tener instalado virtualenv en python (una libreria. sino es "pip install virtualenv")
 comando: "python3 -m venv p2" (se va a llamar "p2" el proyecto/entorno, y lo estoy creando). o sino tambien "virtualenv env"
@@ -53,6 +61,11 @@ ROM: 1 tera  (Memoria de computadora, relacionado con datalake.barato e infinito
 RAM: 8 a 32GB buena performance. memoria volatil de corto plazo para procesamiento
 PROCESADOR: CPU (trabaja más en seria) o GPU (trabaja más en paralelo) según arquitectura. Normalmente tienen 1 cluster/servidor/nodo master con otros nodos/nucleos/workers. Cada nodo tiene un core(procesador) que la suman hacen  y una memoria RAM específica que se utilizan según necesidades optimizadamente. 
 Cada nodo se prende, según dicen, de forma optimizada y usando lo minimo indispensable.
+BITES
+GPU VS CPU?
+tensorflow usa cuda... que es?
+
+
 
 
 PARA TENER ACCESO A REDES DE EMPRESAS (DONDE TIENEN CIERTOS PROGRAMAS, APLICACIONES Y DATOS), SE NECESITA contar con UN IP publica QUE ESTE DENTRO DEL RANGO DE LAS IPs DE LA RED. Varios caminos:
