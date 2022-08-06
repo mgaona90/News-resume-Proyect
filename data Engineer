@@ -12,6 +12,16 @@ Yy despues esta la IP publica (tambien dinamica, cuando reinicias router cambia 
 que son los diapositivos que se pueden conectar a internet. Router es el clasico ejemplo. Esos si deberias poder encontrar mas datos porque son publicos. 
 En esta pag por ejemplo te dice tu ip publica, y cuando reinicias el router debería cambiar: https://www.cualesmiip.com/
 
+comandos en bash utiles para conexiones
+ipconfig: ver conexiones vigentes
+ping IP/host: Nos dice si hay conexión abierta, y tiempo de demora en envio y recibimiento de paquetes en bites
+arp -a: ver las ips conctadas a la misma red local (siempre y cuando sea privada) en la que estoy
+nslookup: conocer la ip relacionada a un host/dominio
+netstat -a: para ver conexiones activas que tienen relación con mi IP
+pathping: da mas información de velocidades y demás con una conexión puntual
+
+
+
 ENTORNOS VIRTUALES 
 me posiciono en la carpeta donde quiero tener el entorno
 tengo que tener instalado virtualenv en python (una libreria. sino es "pip install virtualenv")
