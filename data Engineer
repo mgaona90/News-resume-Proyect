@@ -110,3 +110,15 @@ puerto:
 database: 
 usuario y contraseña (Las credenciales)
 tipo de base de datos: (si es mysql, azure, redshift,etc. cada uno de estos tiene diferentes drivers, que son quienes funcionan de interpretador, propios de cada tecnología)
+
+
+
+CONCEPTOS
+procesos asincronicos: (procesos que no suceden en serie, uno atras de otro instantaneamente. Sino que suceden, se "activan" cuando se dan ciertos eventos, discontinuamente. Librerias:  AIOHTTP, SANIC o Vibora)
+multiprocessing: varios procesos en simultaneo. EN paralelo
+concurrencia: capacidad de paralelizar procesos.
+bloqueante: tareas que usan el thread (procesador creo) y no dan lugar a que se ejecute otra tarea hasta que devuelva el resultado
+No Bloqueante: Una operación de éste tipo no bloquea el Thread ya que devuelve inmediatamente el control a nuestra aplicación independientemente del resultado
+
+Sincrónico: el ejemplo, es hacer la fila para comprar una entrada de cine. Para recibir el ticket (el resultado), necesitas esperar a que todos los de adelanten compren 
+Asincrónico:el ejemplo, es hacer fila en macdonal. Aca, la diferencia es que la persona de adelante que compro, pero que no le dieron el producto (resultado), te da espacio a que vs compres!!
