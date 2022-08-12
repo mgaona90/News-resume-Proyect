@@ -121,4 +121,4 @@ bloqueante: tareas que usan el thread (procesador creo) y no dan lugar a que se 
 No Bloqueante: Una operación de éste tipo no bloquea el Thread ya que devuelve inmediatamente el control a nuestra aplicación independientemente del resultado
 
 Sincrónico: el ejemplo, es hacer la fila para comprar una entrada de cine. Para recibir el ticket (el resultado), necesitas esperar a que todos los de adelanten compren 
-Asincrónico:el ejemplo, es hacer fila en macdonal. Aca, la diferencia es que la persona de adelante que compro, pero que no le dieron el producto (resultado), te da espacio a que vs compres!!
+Asincrónico:el ejemplo, es hacer fila en macdonal. Aca, la diferencia es que la persona de adelante que compro, pero que no le dieron el producto (resultado), te da espacio a que vs compres!! el script ya corrio, deja que otro procesa corra aunq no tengas el resultado. y cuando se devuelva el resultado, mas adelante te lo da sin ocupar el procesador
