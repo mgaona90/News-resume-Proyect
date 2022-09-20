@@ -65,6 +65,12 @@ Eliminar ambientes"tutorial": conda env remove -n tutorial
 
 
 
+SI LO QUE QUIERO ES HACER UNA FOTO DE LAS LIBRERÍAS INSTALADAS, CORRO ESTE COMANDO PARA QUE SE ME GUARDEN EN UN TXT POR CUALQUIER COSA:
+pip freeze > requirements.txt
+
+ME VA A GUARDAR UN .TXT. EN LA MISMA UBICACIÓN DEL SCRIPT DONDE LO CORRI CON TODOS LOS MODULOS Y VERSIONES
+
+
 
 COMPUTADORA
 ROM: 1 tera  (Memoria de computadora, relacionado con datalake.barato e infinito
