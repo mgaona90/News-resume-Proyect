@@ -142,6 +142,8 @@ Distribuciones:
 #         Traducción:Encoder-Decoder
 #         chatbot: Encoder-Decoder
 #         Reconocimiento de voz: ? investigar wev2vec2?
+#	  SIEMPRE PROBAR ANTES CON NAIVE BALLES. ES LO MAS CLASICO, ANTES DE LSTM O EMBEDDING. ES DIRECTAMENTE PASAR LAS PALABRAS A NUMEROS Y VER DONDE HAY PATRONES.
+											 
 # 
 # ################################# NLP especialidad
 # 
