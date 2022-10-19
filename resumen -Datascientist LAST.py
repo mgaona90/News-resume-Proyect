@@ -135,16 +135,18 @@ Distribuciones:
 #         .Usually in decision trees in forest, or using many algorithms (Any)
 
 #     NLP
+# La tendencia es usar arquitectura transformers, modelos preentrenados y hacer fine tunning. La plataforma a usar para ir llevando registro de resultados es ML Flow.
+# Tambien siempre es bueno hacer un analisis exploratorio para entender distribución de tokens, verbos, sustantivos, temáticas, frecuencias, etc. y probar modelos clasicos de NLP como Naive bayes (no importa orden, relación de significado de palabras o relación entre palabras. sino q cada palabra es independiente y según la qty de veces q apareza, mas o menos probable q sea un grupo) o LSTM (vs bert, es palabra por palabra, y no tiene una visión tan integral, memoria solo corto plazo), dependiendo de los casos. Es util utilizar spacy para poder identificar la estructura gramatical tambien o identificar entidades.
 #         Clasificar texto: Beto (Auto-Encoder)
-#         predicción de palabras: Auto-Decoder 
-#         Resumir texto: Encoder-Decoder 
-#         identificar categorías: LDA (Latent Dirichlet Allocation) unsupervised
+#         predicción de palabras: Auto-Decoder. Algo de beto podria ser pero en verdad iria un gpt-3
+#         Resumir texto: Encoder-Decoder. T5
+#         identificar categorías/topic modeling/clustering: LDA (Latent Dirichlet Allocation) unsupervised o affinity propagation
 #         Traducción:Encoder-Decoder
 #         chatbot: Encoder-Decoder
-#         Reconocimiento de voz: ? investigar wev2vec2?
-#	  SIEMPRE PROBAR ANTES CON NAIVE BALLES. ES LO MAS CLASICO, ANTES DE LSTM O EMBEDDING. ES DIRECTAMENTE PASAR LAS PALABRAS A NUMEROS Y VER DONDE HAY PATRONES.
+#         Reconocimiento de voz:Wav2Vec2 + fine tunning	
+# 	  Modelos de Huggingface varios preentrenados. ejemplo: model of similarity. se entrena para identificar similitudes entre oraciones
 											 
-# 
+											 
 # ################################# NLP especialidad
 # 
 # #########sirve para: chatbots, resumenes, correción, predicción de palabra, generación de texto,clasificación de texto,
