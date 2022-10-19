@@ -1,0 +1,82 @@
+# Se neceita tener un archivo token.pickle y un archivo en json con las credenciales: este formato:
+# {"installed":{"client_id":"1005307jodjijqn.apps.googleusercontent.com","project_id":"essential-storm-2","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"GOCS6FltOKMXdvm","redirect_uris":["http://localhost"]}}
+
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
+from googleapiclient import discovery
+
+
+
+def gsheet_api_check(SCOPES):
+    creds = None
+    if os.path.exists('token.pickle'):
+        with open('token.pickle', 'rb') as token:
+            creds = pickle.load(token)
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                'credentials.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+        with open('token.pickle', 'wb') as token:
+            pickle.dump(creds, token)
+    return creds
+
+def pull_sheet_data(SCOPES,SPREADSHEET_ID,DATA_TO_PULL):
+    creds = gsheet_api_check(SCOPES)
+    service = build('sheets', 'v4', credentials=creds)
+    sheet = service.spreadsheets()
+    result = sheet.values().get(
+        spreadsheetId=SPREADSHEET_ID,
+        range=DATA_TO_PULL).execute()
+    values = result.get('values', [])
+    
+    if not values:
+        print('No data found.')
+    else:
+        rows = sheet.values().get(spreadsheetId=SPREADSHEET_ID,
+                                  range=DATA_TO_PULL).execute()
+        data = rows.get('values')
+        print("COMPLETE: Data copied")
+        return data
+    
+def write_to_gsheet(spreadsheet_id, sheet_name, data_df):
+    creds = gsheet_api_check(SCOPES)
+    """
+    this function takes data_df and writes it under spreadsheet_id
+    and sheet_name using your credentials under service_file_path
+    """
+    #gc = pygsheets.authorize(service_file=service_file_path)
+    gc = pygsheets.authorize(custom_credentials=creds)
+    sh = gc.open_by_key(spreadsheet_id)
+    try:
+        sh.add_worksheet(sheet_name)
+    except:
+        pass
+    wks_write = sh.worksheet_by_title(sheet_name)
+    wks_write.clear('A1',None,'*')
+    wks_write.set_dataframe(data_df, (1,1), encoding='utf-8', fit=True)
+    wks_write.frozen_rows = 1
+    
+    
+    
+    
+#Pulls data from the entire spreadsheet tab.
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+SPREADSHEET_ID = '1n_2pnVOlPFqcxoXusjdmjgp4x9wYwQpMYgFP2eFU5Pk'
+HOJA_LEER = 'Dataset 1003 1'
+NOMBRE_HOJA_ESCRIBIR = 'prueba1'
+
+
+
+RANDOM_SEED = 42
+
+DATA_TO_PULL = HOJA_LEER
+data = pull_sheet_data(SCOPES,SPREADSHEET_ID,DATA_TO_PULL)
+df = pd.DataFrame(data[1:], columns=data[0])
