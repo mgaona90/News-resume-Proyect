@@ -25,7 +25,7 @@ pathping: da mas información de velocidades y demás con una conexión puntual
 ENTORNOS VIRTUALES 
 me posiciono en la carpeta donde quiero tener el entorno
 tengo que tener instalado virtualenv en python (una libreria. sino es "pip install virtualenv")
-comando: "python3 -m venv p2" (se va a llamar "p2" el proyecto/entorno, y lo estoy creando). o sino tambien "virtualenv env"
+comando: "python3 -m venv p2" (se va a llamar "p2" el proyecto/entorno, y lo estoy creando). o sino tambien "virtualenv env". ojo que en microsoft python a veces tiene alias como py, seria py -m venv p2
 comando para activar el entorno virtual, estando en la carpeta del entorno creado,p2 mi caso: 
 linux: source bin/activate 
  windows: ".\Scripts\activate" estando dentro del entorno). El comando en windows para activar: "Scripts\activate"
