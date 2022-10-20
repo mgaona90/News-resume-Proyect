@@ -1,0 +1,64 @@
+from google.colab import auth
+auth.authenticate_user()
+
+import gspread
+from google.auth import default
+creds, _ = default()
+from IPython.display import clear_output
+from gspread_dataframe import set_with_dataframe
+
+import pandas as pd
+
+gc = gspread.authorize(creds)
+
+#worksheet = gc.open('TagSegmentos').sheet1
+sheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1OBkU7OJFcS5J-6mGsU0ceYuxENdEtO0YI04JOMRvOao/edit#gid=1425916323')
+
+#cell_list = worksheet.range('A1:C2')
+
+#import random
+#for cell in cell_list:
+#  cell.value = random.randint(1, 10)
+
+#worksheet.update_cells(cell_list)
+
+
+
+#data = sheet.get_all_values()
+data = sheet.worksheet('TagSegmentos').get_all_records()
+temas = sheet.worksheet('Temas').get_all_records()
+df = pd.DataFrame.from_dict(data)
+df_temas = pd.DataFrame.from_dict(temas)
+
+
+df_trabajar = df.loc[df['TemaSegmento']==''].sample(frac=1)
+df_trabajar['ID_tema'] = 999
+b=0
+while 1==1:
+  print(df_temas.to_string(index=False))
+  print(' 99: Salir')
+  print("")
+  print("SEGMENTO A TAGUEAR:")
+  print(df_trabajar.iloc[b]['SEGMENTO_TEXTO'])
+  print("")
+  a = input('seleccionar: ')
+  if a.isnumeric() == True:
+    if int(a) == 99:
+      df_actualizar = df_trabajar.merge(df_temas, on='ID_tema')[['Id', 'Clase']]
+      df = df.merge(df_actualizar, on='Id', how='left')
+      df['TemaSegmento'].mask((df['TemaSegmento']=='')&(df['Clase'].notnull()), df['Clase'], inplace=True)
+      df.drop(columns='Clase', inplace=True)
+      wks_write = sheet.worksheet('TagSegmentos')
+      wks_write.clear()
+      set_with_dataframe(wks_write, df)
+      clear_output()
+      total = len(df_trabajar)
+      tagueados = len(df_actualizar)
+      print("Tagueados " + str(tagueados)+ " de " + str(total) + " pendientes.")
+      break
+    df_trabajar['ID_tema'].iloc[b] = int(a)
+    b=b+1
+    clear_output()
+  elif a.isnumeric() == False:
+    clear_output()
+    print("INGRESAR OPCION NUMERICA")
