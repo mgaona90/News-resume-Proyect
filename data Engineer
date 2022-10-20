@@ -35,7 +35,8 @@ linux: source bin/activate
 - .py: 
   corro el script phyton: Directorio >python nombre_archivo.py
 - .ipynb:
-  Dentro del enviroment, necesito instalar la librería que cree un kernel para tratar a los archivos .ipynb:
+  Dentro d
+  el enviroment, necesito instalar la librería que cree un kernel para tratar a los archivos .ipynb:
   "ipython kernel install --user --name=venv", para visualizar los kerneles
    "pip install ipykernel", esto para crear un kernel dentro del ambiente
    "python -m ipykernel install --user --name ENVNAME --display-name nombre kernel
