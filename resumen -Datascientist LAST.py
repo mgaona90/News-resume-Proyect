@@ -136,7 +136,8 @@ Distribuciones:
 
 #     NLP
 # La tendencia es usar arquitectura transformers, modelos preentrenados y hacer fine tunning. La plataforma a usar para ir llevando registro de resultados es ML Flow.
-# Tambien siempre es bueno hacer un analisis exploratorio para entender distribución de tokens, verbos, sustantivos, temáticas, frecuencias, etc. y probar modelos clasicos de NLP como Naive bayes (no importa orden, relación de significado de palabras o relación entre palabras. sino q cada palabra es independiente y según la qty de veces q apareza, mas o menos probable q sea un grupo) o LSTM (vs bert, es palabra por palabra, y no tiene una visión tan integral, memoria solo corto plazo), dependiendo de los casos. Es util utilizar spacy para poder identificar la estructura gramatical tambien o identificar entidades.
+# Tambien siempre es bueno hacer un analisis exploratorio para entender distribución de tokens, verbos, sustantivos, temáticas, frecuencias, etc. 
+# El baseline, lo mas basico sería probar modelos clasicos de NLP como Tf-idf (frecuencia de terminos/palabras + frecuencia inversa de documento, donde saca ponderación a las palabras que se repiten mucho) o Naive bayes (no importa orden, relación de significado de palabras o relación entre palabras. sino q cada palabra es independiente y según la qty de veces q apareza, mas o menos probable q sea un grupo) o LSTM (vs bert, es palabra por palabra, y no tiene una visión tan integral, memoria solo corto plazo), dependiendo de los casos. Es util utilizar spacy para poder identificar la estructura gramatical tambien o identificar entidades.
 #         Clasificar texto: Beto (Auto-Encoder). ojo que tambien se pueden calibrar con un naive bayes luego de este modelo
 #         predicción de palabras: Auto-Decoder. Algo de beto podria ser pero en verdad iria un gpt-3
 #         Resumir texto: Encoder-Decoder. T5
