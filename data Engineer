@@ -4,6 +4,7 @@ Conda: Gestor de paquetes y un sistema de gestión de entornos. CUenta con canal
 Anaconda: es conda pero suma cositas. Esta orientado a simplificar el despliegue y administración de los paquetes de software. Facilita el uso de varias plataformas por ejemplo como visual studio code, jupyter, jupyterlab
 Las librerías se obtienen por conda o pip, que buscan en archivos jerarquicamente.
 
+archivos pueden ser .ipynb o.py. el archivo .py se puede correr desde un bash e ingresandole parametros! se definenn en el __main__ del .py por definición. sino, se suele usar para dejar parametrizable, un archivo de configruación .yml, q es un dicciónario parametrizable
 
 IPs
 Cada diapositivo tiene una IP privada dinamica asociada al router (dinamica porque cambia en cada nueva conexión. ej. cuando reinicias el router) y se la
