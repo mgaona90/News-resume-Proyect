@@ -137,10 +137,17 @@ Distribuciones:
 #     NLP
 # La tendencia es usar arquitectura transformers, modelos preentrenados y hacer fine tunning. La plataforma a usar para ir llevando registro de resultados es ML Flow.
 # Tambien siempre es bueno hacer:
-#	- un analisis exploratorio para entender distribución de tokens, verbos, sustantivos, temáticas, frecuencias, etc. 
-#     	- Tratamiento de datos: lower, modificación de palabras/entidades/verbo infinito, caracteres especiales, acentos, stopwrods, etc.
+#	- un analisis exploratorio para entender distribución de tokens, verbos, sustantivos, stemming, temáticas, frecuencias, etc.
+#	- metodo no supervisado para detectar tópicos: LDA topic. a cada palabra le asigna un topic (imaginemos q hay 3)
+#     	- Tratamiento de datos: 
+# 		- lower Upper,caracteres especiales, cambio de palabras, acentos, etc.
+# 		- tokenización (unigram, bigrams, o más)
+# 		- stemmatization/lemmatizatión
+# 		- eliminación de palabras muy frecuentes y poco frecuentes. o muy largas/muy cortas
+# 		- lista de stopwords
+# 		- Jugar con estructura gramatical (spacy)
 #	- Luego, el baseline sería ir de lo mas basico de los modelos/herramientas clasicas de NLP:
-#										- BoW/CountVectorizer/Bag of words (feature extraction). Cada oración pasa a ser un vector de 0 y 1 donde cada posición representa una palabra. el tamaño del vector de cada oración, es la qty de palabras q existen. llevar a low, verbo infinitivo, etc.
+#										- BoW/LDA topic/CountVectorizer/Bag of words (feature extraction). Cada oración pasa a ser un vector de 0 y 1 donde cada posición representa una palabra. el tamaño del vector de cada oración, es la qty de palabras q existen. llevar a low, verbo infinitivo, etc.
 #										- Tf-idf (feature extraction). frecuencia de terminos/palabras + frecuencia inversa de documento, donde saca ponderación a las palabras que se repiten mucho.
 #									- Naive bayes (no importa orden, relación de significado de palabras o relación entre palabras. sino q cada palabra es independiente y según la qty de veces q apareza, mas o menos probable q sea un grupo) o LSTM (vs bert, es palabra por palabra, y no tiene una visión tan integral, memoria solo corto plazo), dependiendo de los casos. Es util utilizar spacy para poder identificar la estructura gramatical tambien o identificar entidades.
 #         Clasificar texto: Beto (Auto-Encoder). ojo que tambien se pueden calibrar con un naive bayes luego de este modelo
