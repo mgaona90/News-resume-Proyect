@@ -5,6 +5,9 @@ Anaconda: es conda pero suma cositas. Esta orientado a simplificar el despliegue
 Las librerías se obtienen por conda o pip, que buscan en archivos jerarquicamente.
 
 archivos pueden ser .ipynb o.py. el archivo .py se puede correr desde un bash e ingresandole parametros! se definenn en el __main__ del .py por definición. sino, se suele usar para dejar parametrizable, un archivo de configruación .yml, q es un dicciónario parametrizable
+otra forma de parametrizar un .py y que sea variable (en archivo de configuración .yml es mas estático), es asi:
+import sys
+nombre = sys.argv[1] #Aca va a estar el 1er parametro de entrada 
 
 IPs
 Cada diapositivo tiene una IP privada dinamica asociada al router (dinamica porque cambia en cada nueva conexión. ej. cuando reinicias el router) y se la
