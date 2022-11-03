@@ -1009,7 +1009,31 @@ model.save('model.h5')
 
 # In[ ]:
 
-
+NLP
+	
+	LDA top modeling
+	https://towardsdatascience.com/latent-dirichlet-allocation-lda-9d1cd064ffa2
+LDA. A todas las palabras le asigna un tópico aleatorio, y cada documento es un tópico según quien tenga más. El modelo itera sobre cada palabra actualizando el tópico calculando 2 probabilidades para cada documento, y para cada palabra:- p(topic 1 | document 1): Si le saco la palabra1 al documento1, cual es la proba de que siga siendo de topic1 el documento1? El topico se define según la cantidad de palabras que tenga de cada topico. Si es asi, palabra1 sigue siendo topico1. Sino, cambia.
+- p(word w| topic t): Despues, se fija cuantos documentos son de topico1 porque contienen la palabra1. Si este valor es alto, genial. Si es bajo, es mas probable que cambie el tópico de la palabra
+actualización asi: p(word w with topic t) = p(topic t | document d) * p(word w | topic t)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 DATA ENGINEER
 
 
