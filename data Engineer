@@ -73,6 +73,10 @@ Eliminar ambientes"tutorial": conda env remove -n tutorial
 SI LO QUE QUIERO ES HACER UNA FOTO DE LAS LIBRERÍAS INSTALADAS, CORRO ESTE COMANDO PARA QUE SE ME GUARDEN EN UN TXT POR CUALQUIER COSA:
 pip freeze > requirements.txt
 
+
+La otra forma, mas detallista: pipreqs carpeta1/ --use-local --force (es el request.txt pero de lo q se usa en esa carpeta carpeta1, no de lo q hay en el ambiente como en el freeze)
+
+
 ME VA A GUARDAR UN .TXT. EN LA MISMA UBICACIÓN DEL SCRIPT DONDE LO CORRI CON TODOS LOS MODULOS Y VERSIONES
 Si quiero trabajar dentro de un entorno virtual, con las librarias de un request.txt, hago asi:
 primero instalo en el entorno:
