@@ -1017,7 +1017,11 @@ LDA. A todas las palabras le asigna un tópico aleatorio, y cada documento es u
 - p(word w| topic t): Despues, se fija cuantos documentos son de topico1 porque contienen la palabra1. Si este valor es alto, genial. Si es bajo, es mas probable que cambie el tópico de la palabra
 actualización asi: p(word w with topic t) = p(topic t | document d) * p(word w | topic t)
 	
-	
+	LIME
+	LIME. Explica clasificaciones de cualquier modelo de ML
+como? Inicia generando leves perturbaciones o eliminando features de sample que se quiere explicar, y enviándolo de nuevo al modelo inicial. 
+
+Con todos los resultados generados sobre el mismo modelo, se lo envía a otro modelo interpretador (normalmente decision tree ) que analiza los resultados. Asi, los features con mayor frecuencia que al modificarse marginalmente generaron un cambio en la clasificación, serán las variables más ponderantes para ese caso. 
 	
 	
 	
