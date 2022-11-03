@@ -74,7 +74,7 @@ SI LO QUE QUIERO ES HACER UNA FOTO DE LAS LIBRERÍAS INSTALADAS, CORRO ESTE COMA
 pip freeze > requirements.txt
 
 
-La otra forma, mas detallista: pipreqs carpeta1/ --use-local --force (es el request.txt pero de lo q se usa en esa carpeta carpeta1, no de lo q hay en el ambiente como en el freeze)
+La otra forma, mas detallista de las librerias q se usan en una notebook, estando dentro de la carpeta donde solo hay scripts .py o .ipynb, correr: pipreqs --use-local (es el request.txt pero de lo q se usa en esa carpeta carpeta1, no de lo q hay en el ambiente como en el freeze)
 
 
 ME VA A GUARDAR UN .TXT. EN LA MISMA UBICACIÓN DEL SCRIPT DONDE LO CORRI CON TODOS LOS MODULOS Y VERSIONES
