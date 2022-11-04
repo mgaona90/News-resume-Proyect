@@ -140,3 +140,11 @@ No Bloqueante: Una operación de éste tipo no bloquea el Thread ya que devuelve
 
 Sincrónico: el ejemplo, es hacer la fila para comprar una entrada de cine. Para recibir el ticket (el resultado), necesitas esperar a que todos los de adelanten compren 
 Asincrónico:el ejemplo, es hacer fila en macdonal. Aca, la diferencia es que la persona de adelante que compro, pero que no le dieron el producto (resultado), te da espacio a que vs compres!! el script ya corrio, deja que otro procesa corra aunq no tengas el resultado. y cuando se devuelva el resultado, mas adelante te lo da sin ocupar el procesador
+
+
+
+MLFlow, 4 herramientas para organizar proyectos:
+- ML Flow tracking. Sirve para el entrenamiento. Se hace un trakeo de las métricas según parametros y dataset utilizados. todo queda registrado
+- ML FLow Project. Lo mas parecido a docker, donde se encapsula todo y queda listo para usarse
+- ML FLow Model. Muy parecido a ML FLow Project, pero además se le puede incluir modelos
+- ML FLow Model Registrary: entorno productivo para implementar un modelo y generar apis de inteML FLow Model Ron otras plataformas
