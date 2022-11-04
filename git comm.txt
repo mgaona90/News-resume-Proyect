@@ -18,3 +18,6 @@ Ramas:
 - Release: la versión final de develop, lista para subir a producción
 - Hotfix: Cambios pequeños que se le hace a la Master
 
+
+// delete branch remotely
+git push origin --delete remoteBranchName
